@@ -1,0 +1,312 @@
+.continer {
+  padding: 40px;
+  background: #ffffff;
+  transform: translateY(100px);
+}
+
+/* Header: title + search */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  padding: 10px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Search box */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchBox:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.searchIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.searchInput {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 0;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
+  background: transparent;
+  color: #111827;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.clearButton {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.clearButton:hover {
+  color: #2563eb;
+}
+
+/* Games grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.game:hover {
+  transform: translateY(-10px);
+  border-color: #2563eb;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.imageContainer {
+  width: 130px;
+  height: 130px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game h3 {
+  margin: 10px 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: serif;
+  color: #111;
+  text-align: center;
+}
+
+/* --- ՆԵՐԲԵՌՄԱՆ ԿՈՃԱԿԻ ԵՎ ԱՆԻՄԱՑԻԱՅԻ CSS --- */
+
+.downloadButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 1s ease, border-color 1s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* Ձախից աջ լցվող ֆոնը (1s տևողությամբ) */
+.downloadButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Սեղմելիս լցվում է ձախից աջ */
+.downloadButton.loading::before,
+.downloadButton.completed::before {
+  transform: translateX(100%);
+}
+
+.downloadButton.loading,
+.downloadButton.completed {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btnContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+  width: 100%;
+}
+
+.downloadButton:hover:not(.loading):not(.completed) {
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+.btnIcon {
+  font-size: 18px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #64748b;
+  font-size: 18px;
+  padding: 40px 0;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .continer {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .searchBox {
+    width: 290px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 900px) {
+  .continer {
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header {
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .searchBox {
+    width: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .continer {
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .title {
+    font-size: 28px;
+    padding: 5px 0;
+  }
+
+  .searchBox {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .searchInput {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

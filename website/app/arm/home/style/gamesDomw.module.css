@@ -1,0 +1,218 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  font-family: inherit;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.top > h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.topMoreLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #2563eb;
+  font-size: 17px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.arrowWrapper {
+  width: 32px;
+  height: 32px;
+  background-color: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.topMoreLink:hover .arrowWrapper {
+  transform: translateX(4px);
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.arrowIcon {
+  font-size: 16px;
+}
+
+.newDownloads {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.gameCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.gameCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gameCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.12);
+  border-color: #cbd5e1;
+}
+
+.gameCard:hover::before {
+  opacity: 1;
+}
+
+.imgWrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 2px solid #f1f5f9;
+  transition: transform 0.3s ease;
+}
+
+.gameCard:hover .imgWrapper {
+  transform: scale(1.05);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gameTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* --- ՆԵՐԲԵՌՄԱՆ ԿՈՃԱԿԻ ԵՎ ԱՆԻՄԱՑԻԱՅԻ CSS (1.0s) --- */
+
+.downloadBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: #f1f5f9;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 1s ease, border-color 1s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+/* Ձախից աջ լցվող անիմացիայի հիմքը (1.0s) */
+.downloadBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Սեղմելիս լցվում է ձախից աջ */
+.downloadBtn.loading::before,
+.downloadBtn.completed::before {
+  transform: translateX(100%);
+}
+
+.downloadBtn.loading,
+.downloadBtn.completed {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btnContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+  width: 100%;
+}
+
+.downloadBtn:hover:not(.loading):not(.completed) {
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+.btnIcon {
+  font-size: 20px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

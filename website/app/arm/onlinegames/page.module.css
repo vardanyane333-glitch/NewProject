@@ -1,0 +1,29 @@
+.page{
+    width: 100%;
+    transform: translateY(80px);
+}
+
+@media screen and (max-width: 1040px) {
+    .page{
+        width: 1140px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .page{
+        width: 555px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .page{
+        width: 555px;
+    }
+}
+
+
+@media screen and (max-width: 555px) {
+    .page{
+        width: 555px;
+    }
+}

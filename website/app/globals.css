@@ -1,0 +1,381 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #171a17;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --------------------------------------------------
+   404 Page Styling - ORNIKA Theme (Light Blue Edition)
+-------------------------------------------------- */
+
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f7ff; /* Բաց կապույտ ֆոն */
+  padding: 1.5rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a;
+}
+
+.error-card {
+  width: 100%;
+  max-width: 1100px;
+  background-color: #f4f8ff; /* Քարդի բաց կապույտ երանգ */
+  border: 1px solid #d2e3fc; /* Կապույտին մոտ եզրագիծ */
+  border-radius: 28px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(14, 116, 144, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+  
+  /* Subtle blue grid pattern background */
+  background-image: radial-gradient(#cce0ff 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Header Section */
+.error-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.error-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #0ea5e9; /* Կապույտ կետ */
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
+}
+
+.error-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+}
+
+/* Main Content Section */
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  z-index: 2;
+}
+
+/* 404 Visual */
+.error-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 450px;
+  height: 180px;
+}
+
+.error-number {
+  font-size: 10rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #dbeafe; 
+  user-select: none;
+}
+
+.error-icon {
+  width: 110px;
+  height: 110px;
+  background-color: #0f172a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  color: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15), 0 8px 10px -6px rgba(14, 165, 233, 0.1);
+  z-index: 3;
+  margin: 0 -15px;
+}
+
+.error-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Concentric background orbits */
+.error-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(14, 165, 233, 0.3); /* Կապույտ օրբիտներ */
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 260px;
+  height: 260px;
+}
+
+.orbit-two {
+  width: 360px;
+  height: 360px;
+  border-color: rgba(14, 165, 233, 0.15);
+}
+
+/* Text elements */
+.error-small {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0369a1;
+  margin-bottom: 0.5rem;
+}
+
+.error-content h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.error-description {
+  font-size: 1rem;
+  color: #475569;
+  max-width: 420px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Button */
+.error-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #0ea5e9; /* Վառ կապույտ կոճակ */
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+}
+
+.error-button:hover {
+  background-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+}
+
+.error-button svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.error-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* Footer Section */
+.error-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid #d2e3fc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1024px) {
+  .error-card {
+    padding: 2rem 2.5rem;
+    min-height: 580px;
+  }
+
+  .error-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .error-number {
+    font-size: 8.5rem;
+  }
+
+  .error-icon {
+    width: 95px;
+    height: 95px;
+    padding: 18px;
+  }
+
+  .orbit-one { width: 230px; height: 230px; }
+  .orbit-two { width: 310px; height: 310px; }
+}
+
+/* Tablets & Large Phones (under 768px) */
+@media screen and (max-width: 768px) {
+  .error-page {
+    padding: 1rem;
+  }
+
+  .error-card {
+    padding: 1.75rem 1.5rem;
+    min-height: 520px;
+    border-radius: 20px;
+  }
+
+  .error-visual {
+    height: 140px;
+    margin-bottom: 1rem;
+  }
+
+  .error-number {
+    font-size: 7rem;
+  }
+
+  .error-icon {
+    width: 80px;
+    height: 80px;
+    padding: 16px;
+    margin: 0 -10px;
+  }
+
+  .orbit-one { width: 190px; height: 190px; }
+  .orbit-two { width: 250px; height: 250px; }
+
+  .error-content h1 {
+    font-size: 2rem;
+  }
+
+  .error-description {
+    font-size: 0.925rem;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+  }
+
+  .error-button {
+    padding: 10px 22px;
+    font-size: 0.875rem;
+  }
+
+  .error-bottom {
+    font-size: 0.7rem;
+    padding-top: 1rem;
+  }
+}
+
+/* Small Mobile Devices (under 480px) */
+@media screen and (max-width: 480px) {
+  .error-card {
+    padding: 1.25rem 1rem;
+    min-height: 480px;
+    border-radius: 16px;
+  }
+
+  .error-logo {
+    font-size: 1rem;
+  }
+
+  .error-label {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+
+  .error-visual {
+    height: 110px;
+  }
+
+  .error-number {
+    font-size: 5rem;
+  }
+
+  .error-icon {
+    width: 65px;
+    height: 65px;
+    padding: 12px;
+  }
+
+  .orbit-one { width: 150px; height: 150px; }
+  .orbit-two { width: 200px; height: 200px; }
+
+  .error-small {
+    font-size: 0.8rem;
+  }
+
+  .error-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .error-description {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .error-bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
