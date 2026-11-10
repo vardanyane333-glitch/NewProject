@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -81,14 +82,20 @@ export default function OnlineApps() {
     if (!text) return;
 
     const url = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
+
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
     <main className={styles.page}>
-      <section className={styles.container} aria-labelledby="apps-title">
+      <section
+        className={styles.container}
+        aria-labelledby="apps-title"
+      >
         <header className={styles.header}>
-          <span className={styles.eyebrow}>Your favorite websites in one place</span>
+          <span className={styles.eyebrow}>
+            Your favorite websites in one place
+          </span>
 
           <h1 className={styles.title} id="apps-title">
             My Apps
@@ -100,8 +107,14 @@ export default function OnlineApps() {
         </header>
 
         <div className={styles.searchArea}>
-          <form className={styles.searchForm} onSubmit={handleSearch}>
-            <label className={styles.visuallyHidden} htmlFor="app-search">
+          <form
+            className={styles.searchForm}
+            onSubmit={handleSearch}
+          >
+            <label
+              className={styles.visuallyHidden}
+              htmlFor="app-search"
+            >
               Search apps or the web
             </label>
 
@@ -121,7 +134,9 @@ export default function OnlineApps() {
               type="search"
               placeholder="Search apps or the web..."
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) =>
+                setQuery(event.target.value)
+              }
             />
 
             {query && (
@@ -135,7 +150,10 @@ export default function OnlineApps() {
               </button>
             )}
 
-            <button className={styles.searchButton} type="submit">
+            <button
+              className={styles.searchButton}
+              type="submit"
+            >
               Search web
               <span aria-hidden="true">↗</span>
             </button>
@@ -143,7 +161,9 @@ export default function OnlineApps() {
 
           <p className={styles.searchHint}>
             <span>Typing filters the apps below</span>
-            <span className={styles.keyHint}>Press Enter to search the web</span>
+            <span className={styles.keyHint}>
+              Press Enter to search the web
+            </span>
           </p>
         </div>
 
@@ -158,11 +178,20 @@ export default function OnlineApps() {
                 key={app.name}
               >
                 <span className={styles.logoBox}>
-                  <img className={styles.appLogo} src={app.logo} alt="" />
+                  <img
+                    className={styles.appLogo}
+                    src={app.logo}
+                    alt=""
+                  />
                 </span>
 
-                <span className={styles.appName}>{app.name}</span>
-                <span className={styles.appDescription}>{app.description}</span>
+                <span className={styles.appName}>
+                  {app.name}
+                </span>
+
+                <span className={styles.appDescription}>
+                  {app.description}
+                </span>
               </a>
             ))}
           </div>
@@ -173,8 +202,13 @@ export default function OnlineApps() {
         )}
 
         <footer className={styles.footer}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          <span>Click an app to open its official website</span>
+          <span
+            className={styles.statusDot}
+            aria-hidden="true"
+          />
+          <span>
+            Click an app to open its official website
+          </span>
         </footer>
       </section>
     </main>

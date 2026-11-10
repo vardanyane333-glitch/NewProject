@@ -1,6 +1,6 @@
 import OnlineApps from "./onlineapps";
 
-export default function onlineappa() {
+export default function onlineapp() {
   return (
     <div>
         <OnlineApps />

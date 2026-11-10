@@ -246,7 +246,7 @@ const Menull: FC = () => {
         },
         {
             label: t.downloadApps,
-            href: getLocalizedHref("/downloadapps"),
+            href: getLocalizedHref("/domwlodApp"),
         },
     ];
 
