@@ -130,6 +130,11 @@
     transition: color 0.2s ease;
 }
 
+.pay_site:hover{
+    transition: .5s;
+    opacity: .9;
+}
+
 .links a:hover {
     color: #2196f3;
 }

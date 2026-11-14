@@ -1,0 +1,238 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  padding: 32px 16px;
+  place-items: center;
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(141, 120, 255, 0.18),
+      transparent 35%
+    ),
+    #1a1440;
+  color: #f2efff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.registerCard {
+  width: min(100%, 480px);
+  padding: clamp(24px, 6vw, 42px);
+  border: 1px solid rgba(170, 152, 255, 0.2);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #29234f, #211b45);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+  transform: translateY(100px);
+}
+
+.logo {
+  display: flex;
+  width: 145px;
+  height: 62px;
+  margin: 0 auto 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.heading {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #aa98ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.title {
+  margin: 0;
+  color: #f2efff;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.description {
+  margin: 10px 0 0;
+  color: #bdb4e6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  margin: 16px 0 8px;
+  color: #e8e3ff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #49416d;
+  border-radius: 11px;
+  outline: none;
+  background: #1d183f;
+  color: #f2efff;
+  font: inherit;
+  font-size: 0.95rem;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.input::placeholder {
+  color: #8981a9;
+}
+
+.input:focus {
+  border-color: #aa98ff;
+  box-shadow: 0 0 0 3px rgba(170, 152, 255, 0.15);
+}
+
+.passwordField {
+  position: relative;
+}
+
+.passwordField .input {
+  padding-right: 68px;
+}
+
+.showPassword {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  padding: 5px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #b9aaff;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.showPassword:hover {
+  color: #fff;
+}
+
+.errorMessage,
+.successMessage {
+  margin: 16px 0 0;
+  padding: 11px 12px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.errorMessage {
+  border: 1px solid rgba(255, 125, 125, 0.35);
+  background: rgba(255, 80, 80, 0.09);
+  color: #ffb5b5;
+}
+
+.successMessage {
+  border: 1px solid rgba(115, 224, 166, 0.3);
+  background: rgba(72, 187, 120, 0.1);
+  color: #a7f3c5;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 22px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8d78ff, #7159e8);
+  color: #fff;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(112, 89, 232, 0.24);
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #9b89ff, #806af2);
+  box-shadow: 0 10px 24px rgba(112, 89, 232, 0.34);
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.loginText {
+  margin: 24px 0 0;
+  color: #bdb4e6;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.loginLink {
+  color: #b9aaff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.loginLink:hover {
+  color: #d3caff;
+  text-decoration: underline;
+}
+
+.logo:focus-visible,
+.showPassword:focus-visible,
+.loginLink:focus-visible,
+.submitButton:focus-visible {
+  outline: 2px solid #aa98ff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .registerCard {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .logo {
+    margin-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .loginLink,
+  .submitButton {
+    transition: none;
+  }
+}

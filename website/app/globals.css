@@ -17,6 +17,33 @@ body {
   color: #171a17;
 }
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1440;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid #1a1440;
+  border-radius: 999px;
+  background: #8d78ff;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aa98ff;
+    cursor: pointer;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 #fff;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;

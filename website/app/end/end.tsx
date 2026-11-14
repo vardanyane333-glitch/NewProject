@@ -44,6 +44,7 @@ const End: FC = () => {
                     <Link href="/onlinegames">Games Online</Link>
                     <Link href="/domwlodGame">Download Games</Link>
                     <Link href="/about">About</Link>
+                    <Link className={style.pay_site} style={{background: "#1a1440", padding: "5px 15px", borderRadius: 5,}} target="_blank" href="http://localhost:3001/"><span style={{color: "white"}}>Pay</span><span style={{color: "#9b8fd4"}}>Site</span></Link>
                 </nav>
             </div>
         </footer>
